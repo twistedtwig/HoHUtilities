@@ -1,0 +1,12 @@
+C:\hoh_code\HohResources\Extensions\bin\Debug\Extensions.dll
+C:\hoh_code\HohResources\Extensions\bin\Debug\Extensions.pdb
+C:\hoh_code\HohResources\Extensions\obj\Debug\ResolveAssemblyReference.cache
+C:\hoh_code\HohResources\Extensions\obj\Debug\Extensions.dll
+C:\hoh_code\HohResources\Extensions\obj\Debug\Extensions.pdb
+C:\hoh_code\HohUtilities\Extensions\bin\Debug\Extensions.dll
+C:\hoh_code\HohUtilities\Extensions\bin\Debug\Extensions.pdb
+C:\hoh_code\HohUtilities\Extensions\bin\Debug\ReflectionUtility.dll
+C:\hoh_code\HohUtilities\Extensions\bin\Debug\ReflectionUtility.pdb
+C:\hoh_code\HohUtilities\Extensions\obj\Debug\ResolveAssemblyReference.cache
+C:\hoh_code\HohUtilities\Extensions\obj\Debug\Extensions.dll
+C:\hoh_code\HohUtilities\Extensions\obj\Debug\Extensions.pdb

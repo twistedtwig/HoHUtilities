@@ -1,0 +1,10 @@
+C:\hoh_code\HohUtilities\ReflectionUtility.Test\bin\Debug\ReflectionUtility.Test.dll
+C:\hoh_code\HohUtilities\ReflectionUtility.Test\bin\Debug\ReflectionUtility.Test.pdb
+C:\hoh_code\HohUtilities\ReflectionUtility.Test\bin\Debug\nunit.core.dll
+C:\hoh_code\HohUtilities\ReflectionUtility.Test\bin\Debug\nunit.core.interfaces.dll
+C:\hoh_code\HohUtilities\ReflectionUtility.Test\bin\Debug\nunit.framework.dll
+C:\hoh_code\HohUtilities\ReflectionUtility.Test\bin\Debug\ReflectionUtility.dll
+C:\hoh_code\HohUtilities\ReflectionUtility.Test\bin\Debug\ReflectionUtility.pdb
+C:\hoh_code\HohUtilities\ReflectionUtility.Test\obj\Debug\ResolveAssemblyReference.cache
+C:\hoh_code\HohUtilities\ReflectionUtility.Test\obj\Debug\ReflectionUtility.Test.dll
+C:\hoh_code\HohUtilities\ReflectionUtility.Test\obj\Debug\ReflectionUtility.Test.pdb
