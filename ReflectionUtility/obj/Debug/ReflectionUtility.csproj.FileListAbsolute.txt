@@ -1,5 +1,0 @@
-C:\hoh_code\HohUtilities\ReflectionUtility\bin\Debug\ReflectionUtility.dll
-C:\hoh_code\HohUtilities\ReflectionUtility\bin\Debug\ReflectionUtility.pdb
-C:\hoh_code\HohUtilities\ReflectionUtility\obj\Debug\ResolveAssemblyReference.cache
-C:\hoh_code\HohUtilities\ReflectionUtility\obj\Debug\ReflectionUtility.dll
-C:\hoh_code\HohUtilities\ReflectionUtility\obj\Debug\ReflectionUtility.pdb

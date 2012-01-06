@@ -1,7 +1,0 @@
-C:\hoh_code\HohResources\SimpleIoCContainer\bin\Debug\SimpleIoCContainer.dll
-C:\hoh_code\HohResources\SimpleIoCContainer\bin\Debug\SimpleIoCContainer.pdb
-C:\hoh_code\HohResources\SimpleIoCContainer\bin\Debug\Extensions.dll
-C:\hoh_code\HohResources\SimpleIoCContainer\bin\Debug\Extensions.pdb
-C:\hoh_code\HohResources\SimpleIoCContainer\obj\Debug\ResolveAssemblyReference.cache
-C:\hoh_code\HohResources\SimpleIoCContainer\obj\Debug\SimpleIoCContainer.dll
-C:\hoh_code\HohResources\SimpleIoCContainer\obj\Debug\SimpleIoCContainer.pdb
