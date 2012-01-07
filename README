@@ -1,5 +1,9 @@
 This is my utility project with general stuff that is used across multiple projects
 
+Every project in here should be a stand alone project if possible.  If it requires other
+projects they must also be generic and within the  Utilities Source Control folder / section.
+
+_____________________________________________________________________________________
 Currently the following projects will not build correctly:
 
 LocateThis
