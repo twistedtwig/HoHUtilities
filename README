@@ -1,1 +1,10 @@
 This is my utility project with general stuff that is used across multiple projects
+
+Currently the following projects will not build correctly:
+
+LocateThis
+
+Currently the following Test projects will not execute correctly:
+
+AssemblyLocator.Test
+ClassLocator.Test
