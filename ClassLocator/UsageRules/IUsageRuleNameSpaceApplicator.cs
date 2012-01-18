@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ClassLocator.UsageRules
+namespace HoHUtilities.ClassLocator.UsageRules
 {
     public interface IUsageRuleNameSpaceApplicator
     {

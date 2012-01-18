@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 
-namespace AssemblyLocator.AssemblyFileLoaders
+namespace HoHUtilities.AssemblyLocator.AssemblyFileLoaders
 {
     public class MEFAssemblyLoader : IAssemblyLoader
     {

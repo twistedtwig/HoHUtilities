@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace AssemblyLocator.AssemblyFileLoaders
+namespace HoHUtilities.AssemblyLocator.AssemblyFileLoaders
 {
     public interface IAssemblyLoader
     {

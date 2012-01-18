@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using NUnit.Framework;
 
-namespace Mvc.Windsor.Test
+namespace HoHUtilities.Mvc.Windsor.Test
 {
     [TestFixture]
     public class Extensions

@@ -5,7 +5,7 @@ using AssemblyLocator.Configuration;
 using AssemblyLocator.UsageRules;
 using Extensions;
 
-namespace AssemblyLocator.Locators
+namespace HoHUtilities.AssemblyLocator.Locators
 {
     public class Locator : ILocator
     {

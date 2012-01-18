@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace SimpleIoCContainer
+namespace HoHUtilities.SimpleIoCContainer
 {
     public static class SimpleIoC
     {

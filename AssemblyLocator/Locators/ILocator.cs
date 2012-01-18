@@ -3,7 +3,7 @@ using System.Reflection;
 using AssemblyLocator.Configuration;
 using AssemblyLocator.UsageRules;
 
-namespace AssemblyLocator.Locators
+namespace HoHUtilities.AssemblyLocator.Locators
 {
     public interface ILocator
     {

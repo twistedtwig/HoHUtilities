@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using AssemblyLocator.UsageRules;
 
-namespace AssemblyLocator.Configuration
+namespace HoHUtilities.AssemblyLocator.Configuration
 {
     public class MockConfigurationController : IConfigurationController
     {

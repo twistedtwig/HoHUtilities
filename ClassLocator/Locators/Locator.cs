@@ -5,7 +5,7 @@ using ClassLocator.BaseClassLocators;
 using ClassLocator.ImplementedClassLocators;
 using ClassLocator.UsageRules;
 
-namespace ClassLocator.Locators
+namespace HoHUtilities.ClassLocator.Locators
 {
     public class Locator : ILocator
     {

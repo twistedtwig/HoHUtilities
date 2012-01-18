@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using NUnit.Framework;
 
-namespace Extensions.Test
+namespace HoHUtilities.Extensions.Test
 {
     [TestFixture]
     public class DictionaryExtensions

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Extensions
+namespace HoHUtilities.Extensions
 {
     public static class CollectionsExtensions
     {

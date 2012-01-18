@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using ClassLocator.UsageRules;
 
-namespace ClassLocator.Locators
+namespace HoHUtilities.ClassLocator.Locators
 {
     public interface ILocator
     {

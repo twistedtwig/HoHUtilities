@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace ClassLocator.ImplementedClassLocators
+namespace HoHUtilities.ClassLocator.ImplementedClassLocators
 {
     public interface IImplementedClassLocator
     {

@@ -2,7 +2,7 @@
 using System.Runtime.Serialization;
 using System.Security.Permissions;
 
-namespace ReflectionUtility
+namespace HoHUtilities.ReflectionUtility
 {
     [Serializable]
     public class PropertyNotFoundException : Exception

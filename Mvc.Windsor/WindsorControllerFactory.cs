@@ -3,7 +3,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using Castle.Windsor;
 
-namespace Mvc.Windsor
+namespace HoHUtilities.Mvc.Windsor
 {
     public class WindsorControllerFactory : DefaultControllerFactory
     {

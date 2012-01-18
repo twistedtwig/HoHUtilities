@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Web.Mvc;
 
-namespace Mvc.Helpers
+namespace HoHUtilities.Mvc.Helpers
 {
     public class Controllers
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using NUnit.Framework;
 
-namespace Extensions.Test
+namespace HoHUtilities.Extensions.Test
 {
     #region test classes used for testing only
 

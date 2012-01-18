@@ -2,7 +2,7 @@
 using System.Reflection;
 using AssemblyLocator.AssemblyFileLoaders;
 
-namespace AssemblyLocator.UsageRules
+namespace HoHUtilities.AssemblyLocator.UsageRules
 {
     public interface IUsageRuleAssemblyApplicator
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using AssemblyLocator.UsageRules;
 using NUnit.Framework;
 
-namespace AssemblyLocator.Test.UsageRules
+namespace HoHUtilities.AssemblyLocator.Test.UsageRules
 {
     [TestFixture]
     public class UsageRuleFolderApplicator

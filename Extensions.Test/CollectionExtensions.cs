@@ -2,7 +2,7 @@
 using System.Linq;
 using NUnit.Framework;
 
-namespace Extensions.Test
+namespace HoHUtilities.Extensions.Test
 {
     [TestFixture]
     public class CollectionExtensions

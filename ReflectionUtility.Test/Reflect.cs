@@ -2,7 +2,7 @@
 using System.Reflection;
 using NUnit.Framework;
 
-namespace ReflectionUtility.Test
+namespace HoHUtilities.ReflectionUtility.Test
 {
     #region Classes used to help test only
 

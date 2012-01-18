@@ -5,7 +5,7 @@ using System.Reflection;
 using AssemblyLocator.UsageRules;
 using NUnit.Framework;
 
-namespace AssemblyLocator.Test.UsageRules
+namespace HoHUtilities.AssemblyLocator.Test.UsageRules
 {
     [TestFixture]
     public class UsageRuleAssemblyApplicator

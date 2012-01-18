@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using Extensions;
 
-namespace ClassLocator.ImplementedClassLocators
+namespace HoHUtilities.ClassLocator.ImplementedClassLocators
 {
     public class ImplementedClassLocator : IImplementedClassLocator
     {

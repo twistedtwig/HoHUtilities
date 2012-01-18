@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using NUnit.Framework;
 
-namespace ClassLocator.Test
+namespace HoHUtilities.ClassLocator.Test
 {
     [TestFixture]
     public class Locator

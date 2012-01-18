@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Extensions
+namespace HoHUtilities.Extensions
 {
     public static class ObjectExtensions
     {

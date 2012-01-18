@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 
-namespace AssemblyLocator.AssemblyFileLoaders
+namespace HoHUtilities.AssemblyLocator.AssemblyFileLoaders
 {
     public class BasicAssemblyLoader : IAssemblyLoader
     {

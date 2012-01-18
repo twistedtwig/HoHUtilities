@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using Extensions;
 
-namespace AssemblyLocator.UsageRules
+namespace HoHUtilities.AssemblyLocator.UsageRules
 {
     public class UsageRuleFolderApplicator : IUsageRuleFolderApplicator
     {

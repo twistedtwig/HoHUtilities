@@ -5,7 +5,7 @@ using Castle.Core;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 
-namespace Mvc.Windsor
+namespace HoHUtilities.Mvc.Windsor
 {
     public static class Extensions
     {

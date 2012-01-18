@@ -3,9 +3,9 @@ using System.Linq;
 using System.Reflection;
 using System.Security.Permissions;
 
-namespace ReflectionUtility
+namespace HoHUtilities.ReflectionUtility
 {
-    [ReflectionPermissionAttribute(SecurityAction.Demand, Unrestricted = true)]
+    [ReflectionPermission(SecurityAction.Demand, Unrestricted = true)]
     public static class Reflect
     {
         private static MethodInfo FindMethodInfo(object objectToHaveMethodInvoked, string methodName, object[] objectParams)

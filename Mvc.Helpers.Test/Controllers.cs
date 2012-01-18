@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using NUnit.Framework;
 
-namespace Mvc.Helpers.Test
+namespace HoHUtilities.Mvc.Helpers.Test
 {
     public class TestController : Controller
     {

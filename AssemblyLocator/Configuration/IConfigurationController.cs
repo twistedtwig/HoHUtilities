@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using AssemblyLocator.UsageRules;
 
-namespace AssemblyLocator.Configuration
+namespace HoHUtilities.AssemblyLocator.Configuration
 {
     public interface IConfigurationController
     {

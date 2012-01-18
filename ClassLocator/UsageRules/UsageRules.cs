@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ClassLocator.UsageRules
+namespace HoHUtilities.ClassLocator.UsageRules
 {
     /// <summary>
     /// What is the restriction looking for, attribute, class or assembly. I.E. What should it be applied to?

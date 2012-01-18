@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using Extensions;
 
-namespace ClassLocator.BaseClassLocators
+namespace HoHUtilities.ClassLocator.BaseClassLocators
 {
     public class BaseClassLocator : IBaseClassLocator
     {

@@ -4,7 +4,7 @@ using System.IO;
 using System.Reflection;
 using AssemblyLocator.AssemblyFileLoaders;
 
-namespace AssemblyLocator.UsageRules
+namespace HoHUtilities.AssemblyLocator.UsageRules
 {
     public class MockUsageRuleAssemblyApplicator : IUsageRuleAssemblyApplicator
     {

@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Text;
 using Extensions;
 
-namespace SimpleIoCContainer
+namespace HoHUtilities.SimpleIoCContainer
 {
     public class SimpleDependencyResolver : IDependencyResolver
     {

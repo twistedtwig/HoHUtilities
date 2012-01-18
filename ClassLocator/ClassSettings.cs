@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ClassLocator
+namespace HoHUtilities.ClassLocator
 {
     /// <summary>
     /// Holds the implementation information for a given baseClass

@@ -2,7 +2,7 @@
 using System.Reflection;
 using ClassLocator.UsageRules;
 
-namespace ClassLocator.Locators
+namespace HoHUtilities.ClassLocator.Locators
 {
     public class MockLocator : ILocator
     {

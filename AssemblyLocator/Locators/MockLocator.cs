@@ -5,7 +5,7 @@ using System.Reflection;
 using AssemblyLocator.Configuration;
 using AssemblyLocator.UsageRules;
 
-namespace AssemblyLocator.Locators
+namespace HoHUtilities.AssemblyLocator.Locators
 {
     /// <summary>
     /// Mock Locator that will only get the executing assembly Folder and all the DLL's / assemblies in it.

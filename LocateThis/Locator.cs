@@ -3,7 +3,7 @@ using Castle.Windsor;
 using ClassLocator;
 using System.Reflection;
 
-namespace LocateThis
+namespace HoHUtilities.LocateThis
 {
     /// <summary>
     /// Locator class that should be used as a singleton within IoC.

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace ClassLocator.BaseClassLocators
+namespace HoHUtilities.ClassLocator.BaseClassLocators
 {
     public interface IBaseClassLocator
     {

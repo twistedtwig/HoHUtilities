@@ -5,7 +5,7 @@ using System.Text;
 using AssemblyLocator.Locators;
 using NUnit.Framework;
 
-namespace AssemblyLocator.Test
+namespace HoHUtilities.AssemblyLocator.Test
 {
     [TestFixture]
     public class LocatorRestrictor

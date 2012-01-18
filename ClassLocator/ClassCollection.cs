@@ -3,7 +3,7 @@ using System.Collections;
 using Extensions;
 using System.Collections.Generic;
 
-namespace ClassLocator
+namespace HoHUtilities.ClassLocator
 {
     /// <summary>
     /// Collection of baseClass Types and the list of their implementations.

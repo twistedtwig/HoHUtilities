@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AssemblyLocator.UsageRules
+namespace HoHUtilities.AssemblyLocator.UsageRules
 {
     
     /// <summary>
