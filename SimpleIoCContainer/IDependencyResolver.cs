@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace HoHUtilities.HoHUtilities.SimpleIoCContainer
+namespace HoHUtilities.SimpleIoCContainer
 {
     public interface IDependencyResolver
     {
