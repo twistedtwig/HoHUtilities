@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{3C6F90FB-D888-41CC-9830-579A4E3A559C}</ProjectGuid>
+    <ProjectGuid>{7562E3A7-04E7-4F4D-ACEB-1656059A37DF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Extensions</RootNamespace>
-    <AssemblyName>Extensions</AssemblyName>
+    <RootNamespace>Mvc.Windsor.Test</RootNamespace>
+    <AssemblyName>Mvc.Windsor.Test</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,8 +31,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ReflectionUtility">
-      <HintPath>..\ReflectionUtility\bin\Debug\ReflectionUtility.dll</HintPath>
+    <Reference Include="log4net">
+      <HintPath>..\dependencies\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.core">
+      <HintPath>..\dependencies\nunit.core.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.core.interfaces">
+      <HintPath>..\dependencies\nunit.core.interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.5.10.11092, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\dependencies\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -43,10 +52,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CollectionsExtensions.cs" />
-    <Compile Include="DictionaryExtensions.cs" />
-    <Compile Include="ObjectExtensions.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mvc.Windsor\Mvc.Windsor.csproj">
+      <Project>{8B54B83D-231D-4045-BEA3-5A0930487B13}</Project>
+      <Name>Mvc.Windsor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
