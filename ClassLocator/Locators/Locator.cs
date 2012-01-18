@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
-using ClassLocator.BaseClassLocators;
-using ClassLocator.ImplementedClassLocators;
-using ClassLocator.UsageRules;
+using HoHUtilities.ClassLocator.BaseClassLocators;
+using HoHUtilities.ClassLocator.ImplementedClassLocators;
+using HoHUtilities.ClassLocator.UsageRules;
 
 namespace HoHUtilities.ClassLocator.Locators
 {

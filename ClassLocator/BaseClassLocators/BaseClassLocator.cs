@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Extensions;
+using HoHUtilities.Extensions;
 
 namespace HoHUtilities.ClassLocator.BaseClassLocators
 {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using AssemblyLocator.Locators;
+using HoHUtilities.AssemblyLocator.Locators;
 using NUnit.Framework;
 
 namespace HoHUtilities.AssemblyLocator.Test

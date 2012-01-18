@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections;
-using Extensions;
+using HoHUtilities.Extensions;
 using System.Collections.Generic;
 
 namespace HoHUtilities.ClassLocator

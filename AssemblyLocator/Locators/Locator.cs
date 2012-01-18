@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
-using AssemblyLocator.Configuration;
-using AssemblyLocator.UsageRules;
-using Extensions;
+using HoHUtilities.AssemblyLocator.Configuration;
+using HoHUtilities.AssemblyLocator.UsageRules;
+using HoHUtilities.Extensions;
 
 namespace HoHUtilities.AssemblyLocator.Locators
 {

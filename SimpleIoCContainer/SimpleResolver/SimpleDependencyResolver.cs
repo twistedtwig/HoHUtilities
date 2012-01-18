@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-using Extensions;
+using HoHUtilities.Extensions;
 
 namespace HoHUtilities.SimpleIoCContainer
 {

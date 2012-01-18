@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
-using AssemblyLocator.Configuration;
-using AssemblyLocator.UsageRules;
+using HoHUtilities.AssemblyLocator.Configuration;
+using HoHUtilities.AssemblyLocator.UsageRules;
 
 namespace HoHUtilities.AssemblyLocator.Locators
 {

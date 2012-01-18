@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
-using AssemblyLocator.AssemblyFileLoaders;
+using HoHUtilities.AssemblyLocator.AssemblyFileLoaders;
 
 namespace HoHUtilities.AssemblyLocator.UsageRules
 {

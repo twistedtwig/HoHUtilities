@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
-using AssemblyLocator.UsageRules;
+using HoHUtilities.AssemblyLocator.UsageRules;
 
 namespace HoHUtilities.AssemblyLocator.Configuration
 {

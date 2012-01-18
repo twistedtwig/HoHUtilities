@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Extensions;
+using HoHUtilities.Extensions;
 
 namespace HoHUtilities.AssemblyLocator.UsageRules
 {

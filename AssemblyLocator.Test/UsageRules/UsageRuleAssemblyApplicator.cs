@@ -2,7 +2,7 @@
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using AssemblyLocator.UsageRules;
+using HoHUtilities.AssemblyLocator.UsageRules;
 using NUnit.Framework;
 
 namespace HoHUtilities.AssemblyLocator.Test.UsageRules

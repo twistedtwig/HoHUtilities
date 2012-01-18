@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
-using ClassLocator.UsageRules;
+using HoHUtilities.ClassLocator.UsageRules;
 
 namespace HoHUtilities.ClassLocator.Locators
 {

@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using AssemblyLocator.UsageRules;
+using HoHUtilities.AssemblyLocator.UsageRules;
 
 namespace HoHUtilities.AssemblyLocator.Configuration
 {
