@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace Mvc.Html.Helpers
+namespace HoHUtilities.Mvc.Html.Helpers
 {
     public static class HelperExtensions
     {

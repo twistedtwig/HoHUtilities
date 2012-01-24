@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using NUnit.Framework;
 
-namespace Mvc.Html.Helpers.Test
+namespace HoHUtilities.Mvc.Html.Helpers.Test
 {
     [TestFixture]
     public class HelperExtensions
