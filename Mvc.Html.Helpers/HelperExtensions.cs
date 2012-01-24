@@ -25,12 +25,13 @@ namespace HoHUtilities.Mvc.Html.Helpers
         /// </summary>
         /// <param name="helper"></param>
         /// <param name="src"></param>
+        /// <param name="url"> </param>
         /// <returns></returns>
-        public static MvcHtmlString JavaScript(this HtmlHelper helper, string src)
+        public static MvcHtmlString JavaScript(this HtmlHelper helper, string src, UrlHelper url)
         {
             var builder = new TagBuilder("script");
             builder.MergeAttribute("type", "text/javascript");
-            builder.MergeAttribute("src", src);
+            builder.MergeAttribute("src", url.Content(src));
             return MvcHtmlString.Create(builder.ToString(TagRenderMode.SelfClosing));
         }
 
@@ -40,13 +41,14 @@ namespace HoHUtilities.Mvc.Html.Helpers
         /// </summary>
         /// <param name="helper"></param>
         /// <param name="src"></param>
+        /// <param name="url"> </param>
         /// <returns></returns>
-        public static MvcHtmlString CSS(this HtmlHelper helper, string src)
+        public static MvcHtmlString CSS(this HtmlHelper helper, string src, UrlHelper url)
         {
             var builder = new TagBuilder("link");
             builder.MergeAttribute("rel", "stylesheet");
             builder.MergeAttribute("type", "text/css");
-            builder.MergeAttribute("href", src);
+            builder.MergeAttribute("href", url.Content(src));
             return MvcHtmlString.Create(builder.ToString(TagRenderMode.SelfClosing));
         }
     }
