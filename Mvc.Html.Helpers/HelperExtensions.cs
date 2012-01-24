@@ -32,7 +32,7 @@ namespace HoHUtilities.Mvc.Html.Helpers
             var builder = new TagBuilder("script");
             builder.MergeAttribute("type", "text/javascript");
             builder.MergeAttribute("src", url.Content(src));
-            return MvcHtmlString.Create(builder.ToString(TagRenderMode.SelfClosing));
+            return MvcHtmlString.Create(builder.ToString(TagRenderMode.Normal));
         }
 
 

@@ -30,7 +30,7 @@ namespace HoHUtilities.Mvc.Html.Helpers.Test
         public void TestImageMvcHtmlHelperReturnsCorrectScriptTagText()
         {
             MvcHtmlString htmlString = Helper.JavaScript("this/is/my/source.js", UrlHelper);
-            Assert.AreEqual("<script src=\"this/is/my/source.js\" type=\"text/javascript\" />", htmlString.ToHtmlString());
+            Assert.AreEqual("<script src=\"this/is/my/source.js\" type=\"text/javascript\"></script>", htmlString.ToHtmlString());
         }
 
 
