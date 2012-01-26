@@ -21,9 +21,26 @@ namespace HoHUtilities.Mvc.Html.Helpers.Test
         [Test]
         public void TestImageMvcHtmlHelperReturnsCorrectImgTagText()
         {
-            MvcHtmlString htmlString = Helper.Image("this/is/my/source.jpg", "some alt text");
+            MvcHtmlString htmlString = Helper.Image("this/is/my/source.jpg", "some alt text", UrlHelper);
             Assert.AreEqual("<img alt=\"some alt text\" src=\"this/is/my/source.jpg\" />", htmlString.ToHtmlString());
         }
+
+
+        [Test]
+        public void TestImageMvcHelperReturnsCorrecImagTagWithAllOptionalsEntered()
+        {
+            MvcHtmlString htmlString = Helper.Image("this/is/my/source.jpg", "some alt text", UrlHelper, "myclassname", "myid", "float: left; font-size: 1.5em");
+            Assert.AreEqual("<img alt=\"some alt text\" class=\"myclassname\" id=\"myid\" src=\"this/is/my/source.jpg\" style=\"float: left; font-size: 1.5em\" />", htmlString.ToHtmlString());
+        }
+
+
+        [Test]
+        public void TestImageMvcHelperReturnsCorrecImagTagWitOnlyOptionalInlineStyleEntered()
+        {
+            MvcHtmlString htmlString = Helper.Image("this/is/my/source.jpg", "some alt text", UrlHelper, "", string.Empty, "float: left; font-size: 1.5em");
+            Assert.AreEqual("<img alt=\"some alt text\" src=\"this/is/my/source.jpg\" style=\"float: left; font-size: 1.5em\" />", htmlString.ToHtmlString());
+        }
+
 
 
         [Test]
