@@ -1,44 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
-using System.Text;
 
 namespace CustomConfigurations
 {
-    /// <summary>
-    /// Deals with Loading Configuration values from the config file.
-    /// </summary>
-    public class ConfigurationLoader : ConfigurationSection
-    {
-        public ConfigurationLoader()
-        {
-            
-        }
-        /// <summary>
-        /// Colleciton of ValueItemElements.
-        /// </summary>
-        [ConfigurationProperty("ValueItems", IsDefaultCollection = true)]
-        [ConfigurationCollection(typeof(ValueItemElementCollection), AddItemName = "ValueItem")]
-        public ValueItemElementCollection ValueItems
-        {
-            get { return this["ValueItems"] as ValueItemElementCollection; }
-        }
-        
-//        [ConfigurationProperty("ValueItem")]
-//        public ValueItemElement ValueItem
-//        {
-//            get { return this["ValueItem"] as ValueItemElement; }
-//        }
-    }
-
-
-
 
     /// <summary>
     /// Object to hold a list of valueItemElements
     /// </summary>
-    public class ValueItemElementCollection: ConfigurationElementCollection
+    public class ValueItemElementCollection : ConfigurationElementCollection
     {
         /// <summary>
         /// When overridden in a derived class, creates a new <see cref="T:System.Configuration.ConfigurationElement"/>.
@@ -51,6 +20,16 @@ namespace CustomConfigurations
             return new ValueItemElement();
         }
 
+        protected override string ElementName
+        {
+            get { return "ValueItem"; }
+        }
+
+        public override ConfigurationElementCollectionType CollectionType
+        {
+            get { return ConfigurationElementCollectionType.BasicMap; }
+        }  
+
         /// <summary>
         /// Gets the element key for a specified configuration element when overridden in a derived class.
         /// </summary>
@@ -61,7 +40,7 @@ namespace CustomConfigurations
         ///                 </param>
         protected override object GetElementKey(ConfigurationElement element)
         {
-            return ((ValueItemElement) element).Key;
+            return ((ValueItemElement)element).Key;
         }
 
         public ValueItemElement this[int index]
@@ -71,7 +50,7 @@ namespace CustomConfigurations
 
         public new ValueItemElement this[string key]
         {
-            get { return base.BaseGet(key) as ValueItemElement; }
+            get { return BaseGet(key) as ValueItemElement; }
         }
     }
 
@@ -90,7 +69,7 @@ namespace CustomConfigurations
             get
             {
                 return this["key"].ToString();
-            }            
+            }
         }
 
         [ConfigurationProperty("value", IsRequired = true, IsKey = false)]
@@ -102,6 +81,4 @@ namespace CustomConfigurations
             }
         }
     }
-
-
 }

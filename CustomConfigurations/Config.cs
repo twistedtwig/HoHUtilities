@@ -1,109 +1,224 @@
 ﻿using System;
-using System.ComponentModel;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Configuration;
+using System.Text.RegularExpressions;
+using System.Xml.XPath;
 
 namespace CustomConfigurations
 {
     /// <summary>
-    /// The Config class is a wrapper around the ConfigurationLoader.  It deals with creating and loading in the variables.
+    /// The Config class is a wrapper around the ConfigurationSectionLoader.  It deals with creating and loading in the variables.
     /// It allows easier access to any Value for a given key.
     /// 
     /// For a given key it will return NULL or the value if found.
     /// </summary>
     public class Config
     {
-        private ConfigurationLoader ConfigLoader = null;
+        private ConfigurationSectionLoader ConfigSectionLoader;
+        private  IList<string> ConfigSectionNames = new List<string>();
         
+
+        /// <summary>
+        /// Default constructor will give a blank configuration path and section, it will try and determine a the config path and choose the first valid section it can find.
+        /// </summary>
+        public Config() : this(string.Empty) { }
 
         /// <summary>
         /// Constructor with the full confiuration path given.
         /// </summary>
-        /// <exception cref="ArgumentException">error if configuraiton path is null or empty string</exception>
+        /// <exception cref="ArgumentException">error if section is null or empty string</exception>
         /// <exception cref="ApplicationException">error if fails to load given configuration section</exception>
         /// <param name="configurationPath"></param>
         public Config(string configurationPath)
-        {
-            if(string.IsNullOrEmpty(configurationPath.Trim()))
+        {            
+            if (!string.IsNullOrEmpty(configurationPath))
             {
-                throw new ArgumentException(configurationPath);
+                //created the config SectionLoader with the given configuration path.
+                if (CreateConfigurationLoaderObject(configurationPath))
+                {
+                    return;
+                }
             }
+            if (ConfigSectionLoader == null) //if we have not yet created a configuration loader try again now.
+            {
+                foreach (string path in DetermineConfigurationPath())
+                {
+                    if (!string.IsNullOrEmpty(path))
+                    {
+                        //created the config SectionLoader with the given configuration path.
+                        if (CreateConfigurationLoaderObject(path))
+                        {
+                            return;
+                        }
+                    }
+                }    
+            }            
 
-            ConfigLoader = System.Configuration.ConfigurationManager.GetSection(configurationPath) as ConfigurationLoader;
-            if(ConfigLoader == null)
-            {
-                throw new ApplicationException(string.Format("ConfigurationLoader failed to load with path '{0}' null object returned.", configurationPath));
-            }
+            //if we got here we were not able to create a configuraiton SectionLoader successfully.
+            throw new ApplicationException("ConfigurationSectionLoader failed to load with any valid path");            
         }
 
         /// <summary>
-        /// Returns the number of Configuration Items found.
+        /// Tries to find all valid configuration section / group paths that are valid for this loader.
         /// </summary>
-        public int Count { get { return ConfigLoader.ValueItems.Count; } }
-
-        /// <summary>
-        /// Checks to see if a given key is in the list of configuration items found
-        /// </summary>
-        /// <param name="key"></param>
         /// <returns></returns>
-        public bool ContainsKey(string key)
+        private IEnumerable<string> DetermineConfigurationPath()
         {
-            return ConfigLoader.ValueItems[key] != null;
+            string configFileLocation = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None).FilePath;
+            string fullApplicationName = typeof (ConfigurationSectionLoader).FullName;
+            string fullApplicationAssembly = typeof(ConfigurationSectionLoader).Assembly.ToString().Substring(0, typeof(ConfigurationSectionLoader).Assembly.ToString().IndexOf(",", StringComparison.InvariantCultureIgnoreCase));
+            string configLoaderRegexString = fullApplicationName + @",[\s]{0,1}" + fullApplicationAssembly;
+            Regex configRegex = new Regex(configLoaderRegexString);
+
+            XPathDocument doc = new XPathDocument(configFileLocation);
+            XPathNavigator nav = doc.CreateNavigator();
+
+            XPathNodeIterator sectionIterator = nav.Select(@"configuration/configSections");
+            foreach (var p in DetermineValidSectionElements(configRegex,String.Empty, sectionIterator)) yield return p;
+
+            XPathNodeIterator sectionGroupIterator = nav.Select(@"configuration/configSections/sectionGroup");
+            foreach (var p in DetermineValidSectionGroups(configRegex, sectionGroupIterator)) yield return p;
         }
 
-        public string this[string key]
+        /// <summary>
+        /// tries to find any valid section groups which contain the correct section to match the regex given for the transform type.
+        /// </summary>
+        /// <param name="configRegex"></param>
+        /// <param name="sectionGroupIterator"></param>
+        /// <returns></returns>
+        private IEnumerable<string> DetermineValidSectionGroups(Regex configRegex, XPathNodeIterator sectionGroupIterator)
         {
-            get
+            if (sectionGroupIterator.Count == 0)
             {
-                if (!ContainsKey(key))
-                {
-                    return null;
-                }
+                throw new ApplicationException(
+                    "unable to find the configuration sectionGroup within the applicaiton config file.");
+            }
 
-                ValueItemElement item = ConfigLoader.ValueItems[key];
-                return item != null ? item.Value : null;
+            while (sectionGroupIterator.MoveNext())
+            {
+                string sectionGroupName = sectionGroupIterator.Current.GetAttribute("name", "");
+
+                string sectionGroupType = sectionGroupIterator.Current.GetAttribute("type", "");
+                if (!string.IsNullOrEmpty(sectionGroupType))
+                {
+                    //have found a section handler that will use the configurationLoader to parse a custom config.
+                    if (configRegex.IsMatch(sectionGroupType))
+                    {
+                        yield return sectionGroupName;
+                    }
+                }
+                else //if the section group doesn't have the correct type then carry on searching.
+                {
+                    foreach (var p in DetermineValidSectionElements(configRegex, sectionGroupName, sectionGroupIterator)) yield return p;
+                }
             }
         }
 
         /// <summary>
-        /// Tries to parse the value for the given key and return the type converted into the generic Type provided.
-        /// 
-        /// The OUT Result indicates if the conversion was successful or not.
+        /// Looks at the given iterator and tries to find any valid section groups that match the regex given for the config transform type.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="key"></param>
-        /// <param name="result"></param>
+        /// <param name="configRegex"></param>
+        /// <param name="parentSection"></param>
+        /// <param name="parentGroupIterator"></param>
         /// <returns></returns>
-        public T TryParse<T>(string key, out bool result)
+        private IEnumerable<string> DetermineValidSectionElements(Regex configRegex, string parentSection, XPathNodeIterator parentGroupIterator)
         {
-            result = false;
-            //check we have real value first.
-            string value = this[key];
-            if (!ContainsKey(key))
+            if (parentGroupIterator == null)
             {
-                return default(T);
+                throw new ArgumentException("parentGroupIterator");
             }
 
-            T instance = Activator.CreateInstance<T>();
-            Type type = instance.GetType();
-            TypeConverter converter = TypeDescriptor.GetConverter(instance.GetType());
-            if (converter.CanConvertFrom(typeof(string)))
+            if (string.IsNullOrEmpty(parentSection.Trim()))
             {
-                try
-                {
-                    object val = converter.ConvertFromInvariantString(value);
-                    if (val == null)
-                        return default(T);
-
-                    result = true;
-                    return (T) val;
-                }
-                catch (Exception)
-                {
-                    return default(T);
-                }
+                //first time round, so the parentGroupIterator has not been started
+                parentGroupIterator.MoveNext();
             }
 
-            return default(T);
+            XPathNodeIterator sectionIterator = parentGroupIterator.Current.Select(@"section");
+
+            while (sectionIterator.MoveNext())
+            {
+                string sectionName = sectionIterator.Current.GetAttribute("name", "");
+                string sectionType = sectionIterator.Current.GetAttribute("type", "");
+                if (!string.IsNullOrEmpty(sectionType))
+                {
+                    //have found a section handler that will use the configurationLoader to parse a custom config.
+                    if (configRegex.IsMatch(sectionType))
+                    {
+                        if (string.IsNullOrEmpty(parentSection))
+                        {
+                            yield return sectionName;                            
+                        }
+                        else
+                        {
+                            yield return string.Format("{0}/{1}", parentSection, sectionName);                            
+                        }
+                    }
+                }
+            }
         }
 
+        /// <summary>
+        /// creates the configurationLoader for the given path.
+        /// </summary>
+        /// <param name="configPath">path to the configuration section in the config file.</param>
+        /// <returns>If the configuration Loader was created successfully, doesn't gaurantee items have been found, only that it is not null.</returns>
+        private bool CreateConfigurationLoaderObject(string configPath)
+        {
+            if (string.IsNullOrEmpty(configPath))
+            {
+                throw new ArgumentException(configPath);
+            }
+
+            try
+            {
+                ConfigSectionLoader = ConfigurationManager.GetSection(configPath) as ConfigurationSectionLoader;
+                if (ConfigSectionLoader == null) return false;
+
+                foreach (ConfigurationGroupElement configGroup in ConfigSectionLoader.ConfigGroups)
+                {
+                    ConfigSectionNames.Add(configGroup.Name);
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            return ConfigSectionLoader != null;
+        }
+
+        /// <summary>
+        /// Returns the number of Config Sections Found.
+        /// </summary>
+        public int Count { get { return ConfigSectionNames.Count; } }
+
+        /// <summary>
+        /// Returns a readonly collection of the section names available.
+        /// </summary>
+        public IEnumerable<string> SectionNames
+        {
+            get { return new ReadOnlyCollection<string>(ConfigSectionNames); }
+        }
+
+        /// <summary>
+        /// Determines if the loader has a config section by the given name.
+        /// </summary>
+        /// <param name="sectionName"></param>
+        /// <returns></returns>
+        public bool ContainsKey(string sectionName)
+        {
+            return ConfigSectionNames.Contains(sectionName);
+        }
+
+        /// <summary>
+        /// Get the config section by the name attribute.
+        /// </summary>
+        /// <param name="sectionName"></param>
+        /// <returns></returns>
+        public ConfigSection GetSection(string sectionName)
+        {
+            return !ConfigSectionNames.Contains(sectionName) ? null : new ConfigSection(ConfigSectionLoader.ConfigGroups[sectionName]);
+        }
     }
 }
