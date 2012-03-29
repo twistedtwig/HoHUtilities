@@ -1,10 +1,12 @@
-﻿using System.Linq;
+﻿using System;
+using System.IO;
+using System.Linq;
 using NUnit.Framework;
 
 namespace CustomConfigurations.Test
 {
     [TestFixture]
-    public class Config
+    public class Config : IDisposable
     {
         private CustomConfigurations.Config Configloader;
 
@@ -59,6 +61,41 @@ namespace CustomConfigurations.Test
 
             Assert.Contains("clienta", Configloader.SectionNames.ToArray());
             Assert.Contains("clientb", Configloader.SectionNames.ToArray());
+        }
+
+        [Test]
+        public void TestCanLoadFileFromThatIsNotDefaultConfigPath()
+        {
+            //Copy test file so it can be reused many times:
+
+            string tempFilePath = "app.Testfile.config";
+            if (File.Exists(tempFilePath))
+            {
+                File.Delete(tempFilePath);
+            }
+            File.Copy("App.Test.config", tempFilePath);
+            Assert.IsTrue(File.Exists(tempFilePath));
+
+            Configloader = new CustomConfigurations.Config(tempFilePath, "testsection5");
+            Assert.IsNotNull(Configloader);
+            Assert.AreEqual(3, Configloader.Count);            
+        }
+
+        [Test]
+        public void TestWhenGivenIncorrectFilePathWillDefaultBackToNormalConfigFile()
+        {
+            Configloader = new CustomConfigurations.Config("C:\temp\thisIsARubbishFilePath.config" ,"testsection2");
+            Assert.IsNotNull(Configloader);
+            Assert.AreEqual(2, Configloader.Count);            
+        }
+
+        /// <summary>
+        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+        /// </summary>
+        /// <filterpriority>2</filterpriority>
+        public void Dispose()
+        {
+            Configloader.Dispose();
         }
     }
 }
