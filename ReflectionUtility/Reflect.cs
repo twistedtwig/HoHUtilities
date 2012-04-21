@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using System.Security.Permissions;
@@ -264,6 +265,25 @@ namespace HoHUtilities.ReflectionUtility
             if (item == null || t == null) return false;
             if (!t.IsGenericType) return false;
             return item.GetType().GetInterfaces().Any(x => x.IsGenericType && x.GetGenericTypeDefinition() == t);
+        }
+
+        /// <summary>
+        /// Determine if the given string is of the given tpye.
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="targetType"></param>
+        /// <returns></returns>
+        public static bool Is(this string input, Type targetType)
+        {
+            try
+            {
+                TypeDescriptor.GetConverter(targetType).ConvertFromString(input);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

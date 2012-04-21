@@ -252,5 +252,18 @@ namespace HoHUtilities.ReflectionUtility.Test
             Assert.IsFalse(ReflectionUtility.Reflect.DoesObjectInheritFromGenericInterface(mc1, typeof(IComparable<>)));
             Assert.IsTrue(ReflectionUtility.Reflect.DoesObjectInheritFromGenericInterface(mc2, typeof(IComparable<>)));
         }
+
+        [Test]
+        public void TestCanCheckStringsAreOfaGivenType()
+        {
+            Assert.IsTrue("this".Is(typeof (string)));
+            Assert.IsFalse("this".Is(typeof (bool)));
+
+            Assert.IsTrue("true".Is(typeof (bool)));
+            Assert.IsFalse("true".Is(typeof(int)));
+
+            Assert.IsTrue("5".Is(typeof (int)));
+
+        }
     }
 }
