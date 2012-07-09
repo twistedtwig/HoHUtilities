@@ -1,5 +1,7 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Web.Mvc;
 using System.Web.Routing;
+using Mvc.Html.Helpers;
 using NUnit.Framework;
 
 namespace HoHUtilities.Mvc.Html.Helpers.Test
@@ -29,7 +31,12 @@ namespace HoHUtilities.Mvc.Html.Helpers.Test
         [Test]
         public void TestImageMvcHelperReturnsCorrecImagTagWithAllOptionalsEntered()
         {
-            MvcHtmlString htmlString = Helper.Image("this/is/my/source.jpg", "some alt text", UrlHelper, "myclassname", "myid", "float: left; font-size: 1.5em");
+            MvcHtmlString htmlString = Helper.Image("this/is/my/source.jpg", "some alt text", UrlHelper, new Dictionary<string, string>()
+                                                                                                             {
+                                                                                                                 { "class", "myclassname"},
+                                                                                                                 { "id", "myid" },
+                                                                                                                 { "style", "float: left; font-size: 1.5em"}
+                                                                                                             });     
             Assert.AreEqual("<img alt=\"some alt text\" class=\"myclassname\" id=\"myid\" src=\"this/is/my/source.jpg\" style=\"float: left; font-size: 1.5em\" />", htmlString.ToHtmlString());
         }
 
@@ -37,7 +44,10 @@ namespace HoHUtilities.Mvc.Html.Helpers.Test
         [Test]
         public void TestImageMvcHelperReturnsCorrecImagTagWitOnlyOptionalInlineStyleEntered()
         {
-            MvcHtmlString htmlString = Helper.Image("this/is/my/source.jpg", "some alt text", UrlHelper, "", string.Empty, "float: left; font-size: 1.5em");
+            MvcHtmlString htmlString = Helper.Image("this/is/my/source.jpg", "some alt text", UrlHelper, new Dictionary<string, string>()
+                                                                                                             {
+                                                                                                                 { "style", "float: left; font-size: 1.5em"}
+                                                                                                             }); 
             Assert.AreEqual("<img alt=\"some alt text\" src=\"this/is/my/source.jpg\" style=\"float: left; font-size: 1.5em\" />", htmlString.ToHtmlString());
         }
 
