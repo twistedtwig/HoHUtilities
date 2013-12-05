@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <version>0.00</version>
+    <authors>Jon Hawkins</authors>
+    <owners>Jon Hawkins</owners>
+    <id>HoH-Non-Web-Utilitiy-Helpers</id>
+    <title>HoH - Non Web Utilitiy Helpers</title>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This set of projects provide little helper and extension methods for NON web environments.</description>
+    <copyright>Copyright Jon Hawkins 2013</copyright>
+    <projectUrl>https://github.com/twistedtwig/HoHUtilities</projectUrl>
+  </metadata>
+ <files>
+    <file src="bin\Release\Extensions.dll" target="lib\net40" />
+    <file src="bin\Release\FileOperationHelpers.dll" target="lib\net40" />
+  </files>
+</package>
