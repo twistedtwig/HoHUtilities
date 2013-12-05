@@ -12,7 +12,7 @@
     <projectUrl>https://github.com/twistedtwig/HoHUtilities</projectUrl>
   </metadata>
  <files>
-    <file src="bin\Release\Extensions.dll" target="lib\net40" />
-    <file src="bin\Release\FileOperationHelpers.dll" target="lib\net40" />
+    <file src="Extensions\bin\Release\Extensions.dll" target="lib\net40" />
+    <file src="FileOperationHelpers\bin\Release\FileOperationHelpers.dll" target="lib\net40" />
   </files>
 </package>
