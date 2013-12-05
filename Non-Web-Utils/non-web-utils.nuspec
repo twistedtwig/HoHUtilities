@@ -14,7 +14,7 @@
  <files>
     <file src="Extensions\bin\Release\Extensions.dll" target="lib\net40" />
     <file src="FileOperationHelpers\bin\Release\FileOperationHelpers.dll" target="lib\net40" />       
-    <file src="FileSystemHelper\bin\Release\FileSystemHelper.dll" target="lib\net40" />
+    <file src="FileSystem.Helper\bin\Release\FileSystem.Helper.dll" target="lib\net40" />
     <file src="ReflectionUtility\bin\Release\ReflectionUtility.dll" target="lib\net40" />
   </files>
 </package>
