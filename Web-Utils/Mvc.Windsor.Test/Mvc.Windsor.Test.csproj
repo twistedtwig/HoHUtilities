@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{8B54B83D-231D-4045-BEA3-5A0930487B13}</ProjectGuid>
+    <ProjectGuid>{7562E3A7-04E7-4F4D-ACEB-1656059A37DF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Mvc.Windsor</RootNamespace>
-    <AssemblyName>Mvc.Windsor</AssemblyName>
+    <RootNamespace>Mvc.Windsor.Test</RootNamespace>
+    <AssemblyName>Mvc.Windsor.Test</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -36,7 +36,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <CodeAnalysisLogFile>bin\Debug\Mvc.Windsor.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisLogFile>bin\Debug\Mvc.Windsor.Test.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
     <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
     <ErrorReport>prompt</ErrorReport>
@@ -46,25 +46,34 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Castle.Core">
-      <HintPath>..\dependencies\Castle.Core.dll</HintPath>
+      <HintPath>..\..\dependencies\Castle.Core.dll</HintPath>
     </Reference>
     <Reference Include="Castle.Windsor">
-      <HintPath>..\dependencies\Castle.Windsor.dll</HintPath>
+      <HintPath>..\..\dependencies\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\dependencies\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\dependencies\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WindsorControllerFactory.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Mvc.Helpers\Mvc.Helpers.csproj">
-      <Project>{EBBE8E2B-1348-471B-87C1-0F66BA1BC43C}</Project>
-      <Name>Mvc.Helpers</Name>
+    <ProjectReference Include="..\Mvc.Windsor\Mvc.Windsor.csproj">
+      <Project>{8B54B83D-231D-4045-BEA3-5A0930487B13}</Project>
+      <Name>Mvc.Windsor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

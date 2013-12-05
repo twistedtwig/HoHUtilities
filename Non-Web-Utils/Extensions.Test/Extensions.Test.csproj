@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E352BEB5-8B93-43D2-912B-29BA09AEA56B}</ProjectGuid>
+    <ProjectGuid>{3FCEA54A-A1CF-47EA-921B-147036B44313}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ReflectionUtility.Test</RootNamespace>
-    <AssemblyName>ReflectionUtility.Test</AssemblyName>
+    <RootNamespace>Extensions.Test</RootNamespace>
+    <AssemblyName>Extensions.Test</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -36,7 +36,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <CodeAnalysisLogFile>bin\Debug\ReflectionUtility.Test.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisLogFile>bin\Debug\Extensions.Test.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
     <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
     <ErrorReport>prompt</ErrorReport>
@@ -45,15 +45,8 @@
     <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.core">
-      <HintPath>..\dependencies\nunit.core.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.core.interfaces">
-      <HintPath>..\dependencies\nunit.core.interfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.framework, Version=2.5.10.11092, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\dependencies\nunit.framework.dll</HintPath>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\dependencies\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -64,14 +57,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CollectionExtensions.cs" />
+    <Compile Include="DictionaryExtensions.cs" />
+    <Compile Include="ObjectExtensionsTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reflect.cs" />
-    <Compile Include="ReflectTestClass.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ReflectionUtility\ReflectionUtility.csproj">
-      <Project>{A594A214-2E01-4E89-B44C-E99D0768C3E5}</Project>
-      <Name>ReflectionUtility</Name>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Extensions\Extensions.csproj">
+      <Project>{3C6F90FB-D888-41CC-9830-579A4E3A559C}</Project>
+      <Name>Extensions</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
