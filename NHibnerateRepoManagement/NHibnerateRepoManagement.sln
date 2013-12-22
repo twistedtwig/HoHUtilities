@@ -1,7 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHibernateSchemaController", "NHibernateSchemaController\NHibernateSchemaController.csproj", "{FB05A5A2-1ECF-47B2-821B-625BD274F205}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NhibernateRepository", "NhibernateRepository\NhibernateRepository.csproj", "{AB28664E-6168-4784-BBF6-F9808C97B256}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB05A5A2-1ECF-47B2-821B-625BD274F205}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB05A5A2-1ECF-47B2-821B-625BD274F205}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB05A5A2-1ECF-47B2-821B-625BD274F205}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB05A5A2-1ECF-47B2-821B-625BD274F205}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB28664E-6168-4784-BBF6-F9808C97B256}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB28664E-6168-4784-BBF6-F9808C97B256}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB28664E-6168-4784-BBF6-F9808C97B256}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB28664E-6168-4784-BBF6-F9808C97B256}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
