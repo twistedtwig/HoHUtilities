@@ -61,9 +61,10 @@
     <Content Include="Content\UserDbSchemaConfigurationController.cs.pp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\DbRepository.cs.pp">
+    <None Include="Content\DbRepository.cs.pp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </None>
+    <Compile Include="DbRepositoryBase.cs" />
     <Compile Include="DbSchemaConfigurationController.cs" />
     <Compile Include="DbSchemaDefinition.cs" />
     <Compile Include="DbSchemaDefinitionConfigLoader.cs" />

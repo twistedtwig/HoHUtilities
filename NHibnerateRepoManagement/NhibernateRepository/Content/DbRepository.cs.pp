@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using NHibernate.Linq;
+using System.Text;
 using NhibernateRepository;
 
-namespace NhibernateRepository.Content
+namespace $rootnamespace$
 {
-    public class DbRepository<T, U> : RepositoryBase<T, U> where T : IDefinitionLoader where U : ISchemaConfigurationLoader
+    public class DbRepository : DbRepositoryBase<IDefinitionLoader, ISchemaConfigurationLoader>
     {
-
-        public DbRepository(T definitionLoader, U schemaConfigurationLoader) : base(definitionLoader, schemaConfigurationLoader)
+        public DbRepository(IDefinitionLoader definitionLoader, ISchemaConfigurationLoader schemaConfigurationLoader) : base(definitionLoader, schemaConfigurationLoader)
         {
-
         }
-        
     }
 }
