@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHibernateSchemaController"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NhibernateRepository", "NhibernateRepository\NhibernateRepository.csproj", "{AB28664E-6168-4784-BBF6-F9808C97B256}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbManagement", "DbManagement\DbManagement.csproj", "{E6E669C2-2E76-4393-9061-9AAE9772543E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{AB28664E-6168-4784-BBF6-F9808C97B256}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB28664E-6168-4784-BBF6-F9808C97B256}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB28664E-6168-4784-BBF6-F9808C97B256}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6E669C2-2E76-4393-9061-9AAE9772543E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6E669C2-2E76-4393-9061-9AAE9772543E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6E669C2-2E76-4393-9061-9AAE9772543E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6E669C2-2E76-4393-9061-9AAE9772543E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
