@@ -1,6 +1,8 @@
 ﻿using System;
 using NhibernateRepository;
 using FluentNHibernate.Cfg;
+using FluentNHibernate.Automapping;
+using FluentNHibernate.Conventions.Helpers;
 
 namespace $rootnamespace$
 {
