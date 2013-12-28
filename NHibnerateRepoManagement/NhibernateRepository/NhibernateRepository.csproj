@@ -49,7 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\XXUserDbSchemaDefinitionConfigLoader.cs.pp">
+    <Content Include="Content\UserDbSchemaDefinitionConfigLoader.cs.pp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Compile Include="DbSchemaDefinition.cs" />
@@ -59,10 +59,7 @@
     <Compile Include="RepositoryBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="UserDbSchemaDefinitionConfigLoader.cs.pp">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+  <ItemGroup>    
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
