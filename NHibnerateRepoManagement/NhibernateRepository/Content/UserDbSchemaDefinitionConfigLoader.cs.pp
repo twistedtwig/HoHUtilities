@@ -1,4 +1,5 @@
-﻿
+﻿using NhibernateRepository;
+
 namespace $rootnamespace$
 {
     public class UserDbSchemaDefinitionConfigLoader : DbSchemaDefinitionConfigLoader
