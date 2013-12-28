@@ -12,6 +12,6 @@
     <projectUrl>https://github.com/twistedtwig/NHibernate-Repository-Base</projectUrl>
   </metadata>
  <files>
-    <file src="NhibernateRepository\bin\Release\*.dll" target="lib\{framework name}{version}" />
+    <file src="bin\Release\*.dll" target="lib\{framework name}{version}" />
   </files>
 </package>
