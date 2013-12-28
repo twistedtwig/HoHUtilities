@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CustomConfigurations">
+      <HintPath>..\packages\CustomConfigurations.0.13\lib\net35\CustomConfigurations.dll</HintPath>
+    </Reference>
     <Reference Include="Iesi.Collections">
       <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
     </Reference>
@@ -45,7 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Content\UserDbSchemaDefinitionConfigLoader.cs" />
     <Compile Include="DbSchemaDefinition.cs" />
+    <Compile Include="DbSchemaDefinitionConfigLoader.cs" />
     <Compile Include="IDefinitionLoader.cs" />
     <Compile Include="ISchemaConfigurationLoader.cs" />
     <Compile Include="RepositoryBase.cs" />
