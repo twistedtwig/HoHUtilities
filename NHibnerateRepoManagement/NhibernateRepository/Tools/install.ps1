@@ -7,4 +7,5 @@ if ($host.Version.Major -eq 1 -and $host.Version.Minor -lt 1)
 else
 {
     $project.Object.Add("UserDbSchemaDefinitionConfigLoader"); 
+    $project.Object.Add("UserDbSchemaConfigurationController"); 
 }
