@@ -13,7 +13,9 @@
   </metadata>
  <files>
     <file src="bin\Release\*.dll" target="lib\net40" />
-    
+    <file src="bin\Release\Content\UserDbSchemaDefinitionConfigLoader.cs.pp" target="UserDbSchemaDefinitionConfigLoader.cs" />
+
+
     
   </files>
 </package>
