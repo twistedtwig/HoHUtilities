@@ -9,9 +9,9 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>This project gives the basic Fluent NHibernate Repository pattern, as well as allowing for database updating.</description>
     <copyright>Copyright Jon Hawkins 2013</copyright>
-    <projectUrl>https://github.com/twistedtwig/NHibernate-Repository-Base</projectUrl>
+    <projectUrl>https://github.com/twistedtwig/HoHUtilities/tree/master/NHibnerateRepoManagement</projectUrl>
   </metadata>
  <files>
-    <file src="bin\Release\*.dll" target="lib\{framework name}{version}" />
+    <file src="bin\Release\*.dll" target="lib\net40" />
   </files>
 </package>
