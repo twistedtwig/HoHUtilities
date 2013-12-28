@@ -15,5 +15,7 @@
     <file src="bin\Release\*.dll" target="lib\net40" />
     <file src="bin\Release\Content\UserDbSchemaDefinitionConfigLoader.cs.pp" target="\Content\" />
     <file src="bin\Release\Content\UserDbSchemaConfigurationController.cs.pp" target="\Content\" />   
+    <file src="bin\Release\Content\DbRepository.cs.pp" target="\Content\" />   
+
   </files>
 </package>

@@ -8,4 +8,5 @@ else
 {
     $project.Object.Remove("UserDbSchemaDefinitionConfigLoader"); 
     $project.Object.Remove("UserDbSchemaConfigurationController"); 
+    $project.Object.Remove("DbRepository"); 
 }

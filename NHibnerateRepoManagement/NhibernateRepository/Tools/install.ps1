@@ -8,4 +8,5 @@ else
 {
     $project.Object.Add("UserDbSchemaDefinitionConfigLoader"); 
     $project.Object.Add("UserDbSchemaConfigurationController"); 
+    $project.Object.Add("DbRepository"); 
 }
