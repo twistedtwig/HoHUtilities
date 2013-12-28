@@ -3,12 +3,14 @@ using System;
 
 namespace NhibernateRepository
 {
-    public abstract class RepositoryBase
+    public abstract class RepositoryBase<TD, TS>  
+        where TD : IDefinitionLoader 
+        where TS : ISchemaConfigurationLoader
     {
         private readonly ISessionFactory _sessionFactory;
         public static ISession SessionItem { get; protected set; }
 
-        protected RepositoryBase(IDefinitionLoader definitionLoader, ISchemaConfigurationLoader schemaConfigurationLoader)
+        protected RepositoryBase(TD definitionLoader, TS schemaConfigurationLoader) 
         {
             if (definitionLoader == null)
             {
