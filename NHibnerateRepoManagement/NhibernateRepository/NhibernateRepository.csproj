@@ -48,7 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Content\UserDbSchemaDefinitionConfigLoader.cs" />
+    <None Include="Content\UserDbSchemaDefinitionConfigLoader.cs.pp" />
     <Compile Include="DbSchemaDefinition.cs" />
     <Compile Include="DbSchemaDefinitionConfigLoader.cs" />
     <Compile Include="IDefinitionLoader.cs" />
