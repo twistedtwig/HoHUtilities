@@ -30,8 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CustomConfigurations">
-      <HintPath>..\packages\CustomConfigurations.0.13\lib\net35\CustomConfigurations.dll</HintPath>
+    <Reference Include="CustomConfigurations, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\CustomConfigurations.0.39\lib\net40\CustomConfigurations.dll</HintPath>
     </Reference>
     <Reference Include="Iesi.Collections">
       <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
