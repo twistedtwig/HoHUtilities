@@ -3,12 +3,13 @@ using System;
 
 namespace NhibernateRepository
 {
-    public abstract class RepositoryBase<TD, TS>  
+    public abstract class RepositoryBase<TD, TS>  : IDisposable
         where TD : IDefinitionLoader 
         where TS : ISchemaConfigurationLoader
     {
         private readonly ISessionFactory _sessionFactory;
-        public static ISession SessionItem { get; protected set; }
+
+        private ITransaction Transaction { get; set; }
 
         protected RepositoryBase(TD definitionLoader, TS schemaConfigurationLoader) 
         {
@@ -24,44 +25,30 @@ namespace NhibernateRepository
 
             var schemaDefinition = definitionLoader.CreateDefinition();
             _sessionFactory = schemaConfigurationLoader.CreateConfiguration(schemaDefinition).SessionFactory;
+
+            Session = _sessionFactory.OpenSession();
+            Transaction = Session.BeginTransaction();
         }
 
-        protected ISession Session
-        {
-            get
-            {
-                if (SessionItem == null || !SessionItem.IsOpen)
-                {
-                    SessionItem = _sessionFactory.OpenSession();
-                }
-
-                return SessionItem;
-            }
-        }
+        protected ISession Session { get; private set; }
 
         public void Dispose()
         {
-            if (SessionItem != null)
+            if (Session != null)
             {
-                Session.Dispose();
+                Session.Close();
+                Session = null;
             }
         }
 
-
-        public void BeginTransaction()
+        public void Commit()
         {
-            Session.BeginTransaction();
+            Transaction.Commit();
         }
 
-        public void CommitTransaction()
+        public void Rollback()
         {
-            Session.Transaction.Commit();
+            if (Transaction.IsActive) Transaction.Rollback();
         }
-
-        public void RollbackTransaction()
-        {
-            Session.Transaction.Rollback();
-        }
-
     }
 }
