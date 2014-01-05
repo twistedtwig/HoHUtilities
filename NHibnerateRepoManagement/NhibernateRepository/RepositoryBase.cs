@@ -1,5 +1,6 @@
 ﻿using NHibernate;
 using System;
+using NHibernateSchemaController;
 
 namespace NhibernateRepository
 {
@@ -24,11 +25,25 @@ namespace NhibernateRepository
             }
 
             var schemaDefinition = definitionLoader.CreateDefinition();
-            _sessionFactory = schemaConfigurationLoader.CreateConfiguration(schemaDefinition).SessionFactory;
+            var configLoader = schemaConfigurationLoader.CreateConfiguration(schemaDefinition);
+            _sessionFactory = configLoader.SessionFactory;
 
             _session = _sessionFactory.OpenSession();
             _session.FlushMode = FlushMode.Never;
 
+
+            var schemaManagementDefinition = new SchemaDefinition
+                {
+                    Configuration = configLoader.Configuration,
+                    Session = _session,
+                    ShowSql = schemaDefinition.ShowSql
+                };
+
+            if (schemaDefinition.AutoCreateDatabase)
+            {
+                var schema = new SchemaManagementController();
+                schema.CreateDatabase(schemaManagementDefinition);
+            }
         }
 
         public ISession ReadOnlySession { get { return _session; } }
