@@ -42,7 +42,10 @@ namespace NhibernateRepository
             if (schemaDefinition.AutoCreateDatabase)
             {
                 var schema = new SchemaManagementController();
-                schema.CreateDatabase(schemaManagementDefinition);
+                if (!schema.IsSchemaValid(configLoader.Configuration))
+                {
+                    schema.UpdateExistingDatabase(schemaManagementDefinition);
+                }
             }
         }
 
