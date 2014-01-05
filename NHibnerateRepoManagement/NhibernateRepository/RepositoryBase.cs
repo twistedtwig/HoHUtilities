@@ -31,7 +31,7 @@ namespace NhibernateRepository
 
         }
 
-        protected ISession ReadOnlySession { get { return _session; } }
+        public ISession ReadOnlySession { get { return _session; } }
 
         public virtual IUnitOfWork CreateUnitOfWork()
         {

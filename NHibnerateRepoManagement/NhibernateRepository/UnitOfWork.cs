@@ -13,7 +13,7 @@ namespace NhibernateRepository
             _transaction = _session.BeginTransaction();
         }
 
-        public ISession Session { get { return _session; } }
+        private ISession Session { get { return _session; } }
 
         public void Dispose()
         {
