@@ -9,7 +9,7 @@ namespace NhibernateRepository
     {
         private readonly ISessionFactory _sessionFactory;
 
-        private ITransaction Transaction { get; set; }
+        private ISession _session;
 
         protected RepositoryBase(TD definitionLoader, TS schemaConfigurationLoader) 
         {
@@ -26,29 +26,26 @@ namespace NhibernateRepository
             var schemaDefinition = definitionLoader.CreateDefinition();
             _sessionFactory = schemaConfigurationLoader.CreateConfiguration(schemaDefinition).SessionFactory;
 
-            Session = _sessionFactory.OpenSession();
-            Transaction = Session.BeginTransaction();
+            _session = _sessionFactory.OpenSession();
+            _session.FlushMode = FlushMode.Never;
+
         }
 
-        protected ISession Session { get; private set; }
+        protected ISession ReadOnlySession { get { return _session; } }
+
+        public virtual IUnitOfWork CreateUnitOfWork()
+        {
+            return new UnitOfWork(_sessionFactory);
+        }
+
 
         public void Dispose()
         {
-            if (Session != null)
+            if (_session != null)
             {
-                Session.Close();
-                Session = null;
+                _session.Close();
+                _session = null;
             }
-        }
-
-        public void Commit()
-        {
-            Transaction.Commit();
-        }
-
-        public void Rollback()
-        {
-            if (Transaction.IsActive) Transaction.Rollback();
-        }
+        }        
     }
 }

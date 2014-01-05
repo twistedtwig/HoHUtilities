@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UnitOfWork.cs" />
     <Content Include="Content\UserDbSchemaDefinitionConfigLoader.cs.pp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -70,6 +71,7 @@
     <Compile Include="DbSchemaDefinitionConfigLoader.cs" />
     <Compile Include="IDefinitionLoader.cs" />
     <Compile Include="ISchemaConfigurationLoader.cs" />
+    <Compile Include="IUnitOfWork.cs" />
     <Compile Include="RepositoryBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

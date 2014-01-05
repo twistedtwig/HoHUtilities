@@ -64,7 +64,7 @@ namespace NHibernateSchemaController
         {
             if (config == null) throw new ArgumentNullException("config");
 
-            SchemaValidator validator = new SchemaValidator(config);
+            var validator = new SchemaValidator(config);
             try
             {
                 validator.Validate();
