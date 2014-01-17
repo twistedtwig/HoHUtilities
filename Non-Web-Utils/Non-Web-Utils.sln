@@ -9,10 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReflectionUtility", "Reflec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReflectionUtility.Test", "ReflectionUtility.Test\ReflectionUtility.Test.csproj", "{E352BEB5-8B93-43D2-912B-29BA09AEA56B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileOperationHelpers", "FileOperationHelpers\FileOperationHelpers.csproj", "{CE7AF94E-A0AC-4066-A8FC-7B14C7865BDB}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileOperationHelpers.Test", "FileOperationHelpers.Test\FileOperationHelpers.Test.csproj", "{82970774-F11B-4A0F-AE89-10473E289CD6}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileSystem.Helper", "FileSystem.Helper\FileSystem.Helper.csproj", "{F6404001-4DE8-4089-930F-2E494E89AEEA}"
 EndProject
 Global
@@ -46,18 +42,6 @@ Global
 		{E352BEB5-8B93-43D2-912B-29BA09AEA56B}.Deployment|Any CPU.Build.0 = Deployment|Any CPU
 		{E352BEB5-8B93-43D2-912B-29BA09AEA56B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E352BEB5-8B93-43D2-912B-29BA09AEA56B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CE7AF94E-A0AC-4066-A8FC-7B14C7865BDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CE7AF94E-A0AC-4066-A8FC-7B14C7865BDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CE7AF94E-A0AC-4066-A8FC-7B14C7865BDB}.Deployment|Any CPU.ActiveCfg = Debug|Any CPU
-		{CE7AF94E-A0AC-4066-A8FC-7B14C7865BDB}.Deployment|Any CPU.Build.0 = Debug|Any CPU
-		{CE7AF94E-A0AC-4066-A8FC-7B14C7865BDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CE7AF94E-A0AC-4066-A8FC-7B14C7865BDB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{82970774-F11B-4A0F-AE89-10473E289CD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{82970774-F11B-4A0F-AE89-10473E289CD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{82970774-F11B-4A0F-AE89-10473E289CD6}.Deployment|Any CPU.ActiveCfg = Debug|Any CPU
-		{82970774-F11B-4A0F-AE89-10473E289CD6}.Deployment|Any CPU.Build.0 = Debug|Any CPU
-		{82970774-F11B-4A0F-AE89-10473E289CD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{82970774-F11B-4A0F-AE89-10473E289CD6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F6404001-4DE8-4089-930F-2E494E89AEEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F6404001-4DE8-4089-930F-2E494E89AEEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6404001-4DE8-4089-930F-2E494E89AEEA}.Deployment|Any CPU.ActiveCfg = Debug|Any CPU
