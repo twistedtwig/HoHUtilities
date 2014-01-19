@@ -132,13 +132,13 @@ namespace Mvc.Html.Helpers
             return MvcHtmlString.Create(builder.ToString(TagRenderMode.SelfClosing));
         }
 
-        public static MvcHtmlString LiNavActionLink(this HtmlHelper helper, string linkText, string actionName, string controllerName, string activeClass = "active")
+        public static MvcHtmlString LiNavActionLink(this HtmlHelper helper, string linkText, string actionName, string controllerName, bool matchControllerOnly = true, string activeClass = "active")
         {
-            return LiNavActionLink(helper, linkText, actionName, controllerName, new RouteValueDictionary(), new Dictionary<string, object>(), activeClass);
+            return LiNavActionLink(helper, linkText, actionName, controllerName, new RouteValueDictionary(), new Dictionary<string, object>(), matchControllerOnly, activeClass);
         }
 
 
-        public static MvcHtmlString LiNavActionLink(this HtmlHelper helper, string linkText, string actionName, string controllerName, RouteValueDictionary routes, IDictionary<string, object> htmlAttributes, string activeClass = "active")
+        public static MvcHtmlString LiNavActionLink(this HtmlHelper helper, string linkText, string actionName, string controllerName, RouteValueDictionary routes, IDictionary<string, object> htmlAttributes, bool matchControllerOnly = true, string activeClass = "active")
         {
             var tagBuilder = new TagBuilder("li")
             {
@@ -146,7 +146,7 @@ namespace Mvc.Html.Helpers
             };
 
             if (((string)helper.ViewContext.RouteData.Values["controller"]).Equals(controllerName, StringComparison.OrdinalIgnoreCase)
-                && ((string)helper.ViewContext.RouteData.Values["action"]).Equals(actionName, StringComparison.OrdinalIgnoreCase))
+                && (matchControllerOnly || ((string)helper.ViewContext.RouteData.Values["action"]).Equals(actionName, StringComparison.OrdinalIgnoreCase)))
             {
                 if (
                     !htmlAttributes.Any(
