@@ -1,5 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
+using System.Web.Mvc.Html;
+using System.Web.Routing;
 
 namespace Mvc.Html.Helpers
 {
@@ -126,6 +130,35 @@ namespace Mvc.Html.Helpers
             builder.MergeAttribute("type", "text/css");
             builder.MergeAttribute("href", url.Content(src));
             return MvcHtmlString.Create(builder.ToString(TagRenderMode.SelfClosing));
+        }
+
+        public static MvcHtmlString LiNavActionLink(this HtmlHelper helper, string linkText, string actionName, string controllerName, string activeClass = "active")
+        {
+            return LiNavActionLink(helper, linkText, actionName, controllerName, new RouteValueDictionary(), new Dictionary<string, object>(), activeClass);
+        }
+
+
+        public static MvcHtmlString LiNavActionLink(this HtmlHelper helper, string linkText, string actionName, string controllerName, RouteValueDictionary routes, IDictionary<string, object> htmlAttributes, string activeClass = "active")
+        {
+            var tagBuilder = new TagBuilder("li")
+            {
+                InnerHtml = helper.ActionLink(linkText, actionName, controllerName, new RouteValueDictionary(), htmlAttributes).ToHtmlString()
+            };
+
+            if (((string)helper.ViewContext.RouteData.Values["controller"]).Equals(controllerName, StringComparison.OrdinalIgnoreCase)
+                && ((string)helper.ViewContext.RouteData.Values["action"]).Equals(actionName, StringComparison.OrdinalIgnoreCase))
+            {
+                if (
+                    !htmlAttributes.Any(
+                        x =>
+                        x.Key.Equals("class", StringComparison.InvariantCultureIgnoreCase) &&
+                        x.Value.ToString().Contains(activeClass)))
+                {
+                    tagBuilder.MergeAttribute("class", activeClass);
+                }
+            }
+
+            return MvcHtmlString.Create(tagBuilder.ToString(TagRenderMode.Normal));
         }
     }
 }
