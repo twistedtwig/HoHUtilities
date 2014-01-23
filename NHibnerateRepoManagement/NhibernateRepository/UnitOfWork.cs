@@ -1,4 +1,8 @@
-﻿using NHibernate;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using NHibernate;
+using NHibernate.Linq;
 
 namespace NhibernateRepository
 {
@@ -36,6 +40,21 @@ namespace NhibernateRepository
             {
                 _transaction.Rollback();
             }
+        }
+
+        public T Get<T>(int id)
+        {
+            return _session.Get<T>(id);
+        }
+
+        public IList<T> Get<T>(Func<T, bool> exp)
+        {
+            return _session.Query<T>().Where(exp).ToList();
+        }
+
+        public T First<T>(Func<T, bool> exp)
+        {
+            return _session.Query<T>().Where(exp).FirstOrDefault();
         }
 
         public void Add<T>(T entity) where T : class 
