@@ -20,7 +20,7 @@ namespace HoHUtilities.Mvc.Windsor
         {
             foreach (Type type in controllerTypes)
             {
-                if (Helpers.Controllers.IsController(type))
+                if (Helpers.Controllers.IsController(type) || Helpers.Controllers.IsApiController(type))
                 {
                     container.Register(Component.For(type).Named(type.FullName).LifeStyle.Is(LifestyleType.Transient));
                 }

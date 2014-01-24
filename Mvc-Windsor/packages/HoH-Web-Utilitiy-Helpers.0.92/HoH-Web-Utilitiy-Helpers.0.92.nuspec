@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>HoH-Web-Utilitiy-Helpers</id>
-    <version>0.29</version>
+    <version>0.92</version>
     <title>HoH - Web Utilitiy Helpers</title>
     <authors>Jon Hawkins</authors>
     <owners>Jon Hawkins</owners>
