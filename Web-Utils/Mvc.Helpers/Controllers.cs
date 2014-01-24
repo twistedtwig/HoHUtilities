@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Web.Mvc;
 
 namespace HoHUtilities.Mvc.Helpers
@@ -14,6 +11,14 @@ namespace HoHUtilities.Mvc.Helpers
                    && type.Name.EndsWith("Controller", StringComparison.OrdinalIgnoreCase)
                    && !type.IsAbstract
                    && typeof(IController).IsAssignableFrom(type);
+        }
+
+        public static bool IsApiController(Type type)
+        {
+            return type != null
+                   && type.Name.EndsWith("Controller", StringComparison.OrdinalIgnoreCase)
+                   && !type.IsAbstract
+                   && typeof(System.Web.Http.ApiController).IsAssignableFrom(type);
         }
     }
 }
