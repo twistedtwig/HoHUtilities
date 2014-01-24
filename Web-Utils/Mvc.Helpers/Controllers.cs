@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web.Http;
 using System.Web.Mvc;
 
 namespace HoHUtilities.Mvc.Helpers
@@ -18,7 +19,7 @@ namespace HoHUtilities.Mvc.Helpers
             return type != null
                    && type.Name.EndsWith("Controller", StringComparison.OrdinalIgnoreCase)
                    && !type.IsAbstract
-                   && typeof(System.Web.Http.ApiController).IsAssignableFrom(type);
+                   && typeof(ApiController).IsAssignableFrom(type);
         }
     }
 }
