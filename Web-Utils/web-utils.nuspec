@@ -8,7 +8,7 @@
     <title>HoH - Web Utilitiy Helpers</title>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>This set of projects provide little helper and extension methods for web (including MVC) environments.</description>
-    <copyright>Copyright Jon Hawkins 2013</copyright>
+    <copyright>Copyright Jon Hawkins 2014</copyright>
     <projectUrl>https://github.com/twistedtwig/HoHUtilities</projectUrl>
   </metadata>
  <files>
