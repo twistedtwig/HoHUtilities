@@ -12,7 +12,7 @@
     <projectUrl>https://github.com/twistedtwig/HoHUtilities/tree/master/Mvc-Windsor</projectUrl>
   </metadata>
  <files>
-    <file src="Extensions\bin\Release\*.dll" target="lib\net451" />
-    <file src="Extensions\bin\Release\*.pdb" target="lib\net451" />
+    <file src="bin\Release\*.dll" target="lib\net451" />
+    <file src="bin\Release\*.pdb" target="lib\net451" />
   </files>
 </package>
