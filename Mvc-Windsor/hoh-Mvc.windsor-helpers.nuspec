@@ -10,6 +10,13 @@
     <description>This is a helper to make DI easier with castle windsor and MVC5.</description>
     <copyright>Copyright Jon Hawkins 2014</copyright>
     <projectUrl>https://github.com/twistedtwig/HoHUtilities/tree/master/Mvc-Windsor</projectUrl>
+
+    <dependencies>
+      <dependency id="Microsoft.AspNet.Mvc" version="5.2.2" />
+      <dependency id="HoH-Web-Utility-Helpers" version="1.0.0" />
+      <dependency id="Castle.Windsor" version="3.3.0" />
+    </dependencies>
+
   </metadata>
  <files>
     <file src="Mvc.Windsor\bin\Release\*.dll" target="lib\net451" />
