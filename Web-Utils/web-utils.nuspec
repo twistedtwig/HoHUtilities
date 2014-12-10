@@ -4,8 +4,8 @@
     <version>$version$</version>
     <authors>Jon Hawkins</authors>
     <owners>Jon Hawkins</owners>
-    <id>HoH-Web-Utilitiy-Helpers</id>
-    <title>HoH - Web Utilitiy Helpers</title>
+    <id>HoH-Web-Utility-Helpers</id>
+    <title>HoH - Web Utility Helpers</title>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>This set of projects provide little helper and extension methods for web (including MVC) environments.</description>
     <copyright>Copyright Jon Hawkins 2014</copyright>
