@@ -10,11 +10,12 @@
     <description>This set of projects provide little helper and extension methods for web (including MVC) environments.</description>
     <copyright>Copyright Jon Hawkins 2014</copyright>
     <projectUrl>https://github.com/twistedtwig/HoHUtilities</projectUrl>
-  </metadata>
 
-<dependencies>
-  <dependency id="Microsoft.AspNet.Mvc" version="5.2.2" />
-</dependencies>
+    <dependencies>
+      <dependency id="Microsoft.AspNet.Mvc" version="5.2.2" />
+    </dependencies>
+
+  </metadata>
 
  <files>
     <file src="Mvc.Helpers\bin\Release\Mvc.Helpers.dll" target="lib\net40" />
