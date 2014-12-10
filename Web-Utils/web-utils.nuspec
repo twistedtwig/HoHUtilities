@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-    <version>0.00</version>
+    <version>$version$</version>
     <authors>Jon Hawkins</authors>
     <owners>Jon Hawkins</owners>
     <id>HoH-Web-Utilitiy-Helpers</id>
@@ -11,6 +11,11 @@
     <copyright>Copyright Jon Hawkins 2014</copyright>
     <projectUrl>https://github.com/twistedtwig/HoHUtilities</projectUrl>
   </metadata>
+
+<dependencies>
+  <dependency id="Microsoft.AspNet.Mvc" version="5.2.2" />
+</dependencies>
+
  <files>
     <file src="Mvc.Helpers\bin\Release\Mvc.Helpers.dll" target="lib\net40" />
     <file src="Mvc.Html.Helpers\bin\Release\Mvc.Html.Helpers.dll" target="lib\net40"  />     
