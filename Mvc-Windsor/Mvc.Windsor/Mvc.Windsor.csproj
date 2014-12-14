@@ -55,11 +55,13 @@
     <Reference Include="Castle.Windsor">
       <HintPath>..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
     </Reference>
-    <Reference Include="Mvc.Helpers">
-      <HintPath>..\packages\HoH-Web-Utilitiy-Helpers.0.4\lib\net40\Mvc.Helpers.dll</HintPath>
+    <Reference Include="Mvc.Helpers, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\HoH-Web-Utility-Helpers.1.0.0.13\lib\net40\Mvc.Helpers.dll</HintPath>
     </Reference>
-    <Reference Include="Mvc.Html.Helpers">
-      <HintPath>..\packages\HoH-Web-Utilitiy-Helpers.0.4\lib\net40\Mvc.Html.Helpers.dll</HintPath>
+    <Reference Include="Mvc.Html.Helpers, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\HoH-Web-Utility-Helpers.1.0.0.13\lib\net40\Mvc.Html.Helpers.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
